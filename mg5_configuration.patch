@@ -1,0 +1,51 @@
+--- mg5_configuration.txt	2020-02-08 10:21:10.335003367 +0000
++++ mg5_configuration_new.txt	2020-02-08 10:21:43.941639788 +0000
+@@ -41,7 +41,7 @@
+ #!  Default: use the shell default Editor
+ #!           or try to find one available on the system
+ #!  Be careful: Only shell based editor are allowed
+-# text_editor = None
++text_editor = nano
+ 
+ #! Prefered WebBrower
+ #! If None: try to find one available on the system
+@@ -59,14 +59,14 @@
+ #!  Defines the path to the pythia8 installation directory (i.e. the
+ #!  on containing the lib, bin and include directories) .
+ #!  If using a relative path, that starts from the mg5 directory
+-# pythia8_path = ./HEPTools/pythia8
++pythia8_path = /opt/pythia8
+ 
+ #! MG5aMC_PY8_interface path
+ #!  Defines the path of the C++ driver file that is used by MG5_aMC to
+ #!  steer the Pythia8 shower.
+ #!  Can be installed directly from within MG5_aMC with the following command:
+ #!     MG5_aMC> install mg5amc_py8_interface
+-# mg5amc_py8_interface_path = ./HEPTools/MG5aMC_PY8_interface 
++mg5amc_py8_interface_path = /opt/mg5/HEPTools/MG5aMC_PY8_interface 
+ 
+ #! Herwig++/Herwig7 paths
+ #!  specify here the paths also to HepMC ant ThePEG
+@@ -93,7 +93,7 @@
+ 
+ #! Allow/Forbid the automatic opening of the web browser  (on the status page)
+ #!  when launching MadEvent [True/False]
+-# automatic_html_opening = True
++automatic_html_opening = False
+ #! allow notification of finished job in the notification center (Mac Only)
+ # notification_center = True
+ 
+@@ -161,11 +161,11 @@
+ 
+ #! lhapdf-config
+ #!  If None: try to find one available on the system
+-# lhapdf = lhapdf-config
++lhapdf = /opt/lhapdf6/bin/lhapdf-config
+ 
+ #! fastjet-config
+ #!  If None: try to find one available on the system
+-# fastjet = fastjet-config
++fastjet = /opt/fastjet/bin/fastjet-config
+ 
+ #! MCatNLO-utilities 
+ #!  relative path starting from main directory
