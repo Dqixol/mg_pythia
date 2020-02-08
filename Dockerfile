@@ -23,18 +23,18 @@ ENV PATH=$PATH:/opt/mg5/bin
 
 RUN wget http://fastjet.fr/repo/fastjet-3.3.3.tar.gz && tar xf fastjet-3.3.3.tar.gz
 RUN cd fastjet-3.3.3 && ./configure --prefix=/opt/fastjet --enable-allplugins --enable-static=no \
-        --enable-pyext && make -j24 && make check && make install
+        --enable-pyext && make -j$(nproc) && make check && make install
 RUN rm fastjet-3.3.3.tar.gz && rm -rf fastjet-3.3.3
 
 RUN wget http://lcgapp.cern.ch/project/simu/HepMC/download/HepMC-2.06.09.tar.gz && \
         tar xf HepMC-2.06.09.tar.gz
 RUN cd HepMC-2.06.09 && ./configure --prefix=/opt/hepmc2 --with-momentum=GEV --with-length=MM && \
-        make -j24 all && make install
+        make -j$(nproc) all && make install
 RUN rm -rf HepMC-2.06.09 HepMC-2.06.09.tar.gz
 
 RUN wget https://lhapdf.hepforge.org/downloads/?f=LHAPDF-6.2.3.tar.gz && \
         tar xf index.html?f=LHAPDF-6.2.3.tar.gz 
-RUN cd LHAPDF-6.2.3 && ./configure --prefix=/opt/lhapdf6 && make -j24 && make check && make install
+RUN cd LHAPDF-6.2.3 && ./configure --prefix=/opt/lhapdf6 && make -j$(nproc) && make check && make install
 RUN rm -rf LHAPDF-6.2.3 index.html?f=LHAPDF-6.2.3.tar.gz 
 
 RUN wget https://github.com/alisw/pythia8/raw/master/pythia8243.tgz && tar xf pythia8243.tgz
@@ -45,7 +45,7 @@ RUN cd pythia8243 && ./configure --prefix=/opt/pythia8 --cxx-common="-fPIC" \
         --with-lhapdf6 --with-lhapdf6-include="/opt/lhapdf6/include" --with-lhapdf6-lib="/opt/lhapdf6/lib" \
         --with-python --with-python-include="/usr/include/python2.7" --with-python-lib="/usr/lib/python2.7" \
         --with-root --with-root-include="/opt/root/include" --with-root-lib="/opt/root/lib" \
-        && make -j24 && make install
+        && make -j$(nproc) && make install
 RUN rm -rf pythia8243 pythia8243.tgz
 
 RUN wget http://madgraph.phys.ucl.ac.be/Downloads/MG5aMC_PY8_interface/MG5aMC_PY8_interface_V1.0.tar.gz \
