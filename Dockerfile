@@ -57,3 +57,5 @@ RUN rm -rf MG5aMC_PY8_interface_V1.0 MG5aMC_PY8_interface_V1.0.tar.gz
 
 COPY mg5_configuration.patch /
 RUN cd /opt/mg5/input/ && patch < /mg5_configuration.patch
+
+RUN chmod -R 777 /opt
