@@ -7,13 +7,13 @@ madgraph docker with Pythia
 
 08.02.2020  using Dockerfile completely.
 
+09.02.2020  Back to 2.6.7 to remove artifacts
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Madgraph5 2.7.0 build on latest ubuntu with root 6.18. 
+#Madgraph5 2.6.7 build on latest ubuntu with root 6.18. 
 
 by default, only pythia8243 is installed. Other packages needed can be installed using `install PACKAGE`.
-
-There are some artefacts and I am trying to solve them. 
 
 Please consider following and/or contributing to the project on Github! https://github.com/Dqicool/mg_pythia
  
