@@ -1,5 +1,5 @@
---- mg5_configuration.txt	2020-02-08 10:21:10.335003367 +0000
-+++ mg5_configuration_new.txt	2020-02-08 10:21:43.941639788 +0000
+--- mg5_configuration.txt	2020-02-08 21:30:22.662000000 +0000
++++ mg5_configuration_new.txt	2020-02-08 21:30:16.735000000 +0000
 @@ -41,7 +41,7 @@
  #!  Default: use the shell default Editor
  #!           or try to find one available on the system
@@ -26,6 +26,15 @@
  
  #! Herwig++/Herwig7 paths
  #!  specify here the paths also to HepMC ant ThePEG
+@@ -82,7 +82,7 @@
+ #! Control when MG5 checks if he is up-to-date.
+ #! Enter the number of day between two check (0 means never)
+ #! A question is always asked before any update
+-# auto_update = 7
++auto_update = 0
+ 
+ ################################################################################
+ #  INFO FOR MADEVENT / aMC@NLO 
 @@ -93,7 +93,7 @@
  
  #! Allow/Forbid the automatic opening of the web browser  (on the status page)
