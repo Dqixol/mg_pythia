@@ -15,10 +15,10 @@ ENV PATH=$PATH:$ROOTSYS/bin
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
 ENV DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$ROOTSYS/lib
 
-RUN wget https://launchpad.net/mg5amcnlo/2.0/2.7.x/+download/MG5_aMC_v2.7.0.tar.gz &&\
-         tar xf MG5_aMC_v2.7.0.tar.gz 
-RUN mv  MG5_aMC_v2_7_0 /opt/mg5 && rm MG5_aMC_v2.7.0.tar.gz
-RUN rm -rf MG5_aMC_v2_7_0 MG5_aMC_v2.7.0.tar.gz
+RUN wget https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/MG5_aMC_v2.6.7.tar.gz &&\
+         tar xf MG5_aMC_v2.6.7.tar.gz 
+RUN mv MG5_aMC_v2_6_7 /opt/mg5 
+RUN rm -rf MG5_aMC_v2_6_7 MG5_aMC_v2.6.7.tar.gz
 ENV PATH=$PATH:/opt/mg5/bin
 
 RUN wget http://fastjet.fr/repo/fastjet-3.3.3.tar.gz && tar xf fastjet-3.3.3.tar.gz
