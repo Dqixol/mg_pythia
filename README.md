@@ -19,6 +19,6 @@ Please consider following and/or contributing to the project on Github! https://
  
 Recommended alia for bash like shell:
 ```bash
-alias mg5="docker run -it --rm -u  `id -u $USER`:`id -g` -v $PWD:$PWD -w $PWD dqixol/madgraph5 mg5_aMC"
+alias mg5='docker run -it --rm -u  `id -u $USER`:`id -g` -v $PWD:$PWD -w $PWD dqixol/madgraph5 mg5_aMC'
 ```
 
