@@ -37,8 +37,8 @@ RUN wget https://lhapdf.hepforge.org/downloads/?f=LHAPDF-6.2.3.tar.gz && \
 RUN cd LHAPDF-6.2.3 && ./configure --prefix=/opt/lhapdf6 && make -j$(nproc) && make check && make install
 RUN rm -rf LHAPDF-6.2.3 index.html?f=LHAPDF-6.2.3.tar.gz 
 
-RUN wget https://github.com/alisw/pythia8/raw/master/pythia8243.tgz && tar xf pythia8243.tgz
-RUN cd pythia8243 && ./configure --prefix=/opt/pythia8 --cxx-common="-fPIC" \
+RUN wget http://home.thep.lu.se/~torbjorn/pythia8/pythia8244.tgz && tar xf pythia8244.tgz
+RUN cd pythia8244 && ./configure --prefix=/opt/pythia8 --cxx-common="-fPIC" \
         --with-fastjet3 --with-fastjet3-include="/opt/fastjet/include" --with-fastjet3-lib="/opt/fastjet/lib" \
         --with-gzip --with-gzip-include="/usr/include" --with-gzip-lib="/usr/lib" \
         --with-hepmc2 --with-hepmc2-include="/opt/hepmc2/include" --with-hepmc2-lib="/opt/hepmc2/lib" \
@@ -46,7 +46,7 @@ RUN cd pythia8243 && ./configure --prefix=/opt/pythia8 --cxx-common="-fPIC" \
         --with-python --with-python-include="/usr/include/python2.7" --with-python-lib="/usr/lib/python2.7" \
         --with-root --with-root-include="/opt/root/include" --with-root-lib="/opt/root/lib" \
         && make -j$(nproc) && make install
-RUN rm -rf pythia8243 pythia8243.tgz
+RUN rm -rf pythia8244 pythia8244.tgz
 
 RUN wget http://madgraph.phys.ucl.ac.be/Downloads/MG5aMC_PY8_interface/MG5aMC_PY8_interface_V1.0.tar.gz \
         && mkdir MG5aMC_PY8_interface_V1.0 && tar xf MG5aMC_PY8_interface_V1.0.tar.gz -C /MG5aMC_PY8_interface_V1.0
