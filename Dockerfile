@@ -12,8 +12,9 @@ RUN mv root /opt/root && rm root_v6.18.04.Linux-ubuntu18-x86_64-gcc7.4.tar.gz
 RUN rm -rf root root_v6.18.04.Linux-ubuntu18-x86_64-gcc7.4.tar.gz
 ENV ROOTSYS=/opt/root
 ENV PATH=$PATH:$ROOTSYS/bin
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib:/opt/lhapdf6/lib
 ENV DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$ROOTSYS/lib
+ENV PYTHONPATH=/opt/lhapdf6/lib/python2.7/site-packages/
 
 RUN wget https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/MG5_aMC_v2.6.7.tar.gz &&\
          tar xf MG5_aMC_v2.6.7.tar.gz 
