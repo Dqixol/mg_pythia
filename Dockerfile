@@ -16,7 +16,7 @@ RUN wget https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/MG5_aMC_v2.6.7.tar.
 RUN mv MG5_aMC_v2_6_7 /opt/mg5 && rm -rf MG5_aMC_v2_6_7 MG5_aMC_v2.6.7.tar.gz
 
 ENV ROOTSYS=/opt/root
-ENV PATH=$PATH:$ROOTSYS/bin::/opt/mg5/bin
+ENV PATH=$PATH:$ROOTSYS/bin:/opt/mg5/bin
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib:/opt/mg5/HEPTools/lhapdf6//lib
 ENV DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$ROOTSYS/lib
 ENV PYTHONPATH=/opt/mg5/HEPTools/lhapdf6/lib/python2.7/site-packages/
