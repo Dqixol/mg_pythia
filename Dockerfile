@@ -21,8 +21,13 @@ ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib:/opt/mg5/HEPTools/lhapdf6//lib
 ENV DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$ROOTSYS/lib
 ENV PYTHONPATH=/opt/mg5/HEPTools/lhapdf6/lib/python2.7/site-packages/
 
+RUN wget http://fastjet.fr/repo/fastjet-3.3.3.tar.gz && tar xf fastjet-3.3.3.tar.gz
+RUN cd fastjet-3.3.3 && ./configure --prefix=/opt/fastjet --enable-allplugins --enable-static=no \
+        --enable-pyext && make && make check && make install
+RUN rm fastjet-3.3.3.tar.gz && rm -rf fastjet-3.3.3
 
-RUN echo "auto_update = 0" >> /opt/mg5/input/mg5_configuration.txt
+
+RUN echo "auto_update = 0" >> /opt/mg5/input/mg5_configuration.txt && echo "fastjet=/opt/fastjet/bin/fastjet-config" >> /opt/mg5/input/mg5_configuration.txt
 RUN echo "install pythia8" >> /install.mg5 && mg5_aMC install.mg5
 RUN chmod -R 777 /opt && mkdir -p /.local/share/nano/ && mkdir -p /root/.local/share/nano/ && chmod -R 777 /root/.local && chmod -R 777 /.local
 
