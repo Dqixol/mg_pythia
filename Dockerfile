@@ -11,15 +11,15 @@ RUN wget https://root.cern/download/root_v6.18.04.Linux-ubuntu18-x86_64-gcc7.4.t
 RUN mv root /opt/root && rm root_v6.18.04.Linux-ubuntu18-x86_64-gcc7.4.tar.gz
 RUN rm -rf root root_v6.18.04.Linux-ubuntu18-x86_64-gcc7.4.tar.gz
 
-RUN wget https://launchpad.net/mg5amcnlo/2.0/2.7.x/+download/MG5_aMC_v2.7.0.tar.gz &&\
-         tar xf MG5_aMC_v2.7.0.tar.gz 
-RUN mv MG5_aMC_v2_7_0 /opt/mg5 && rm -rf MG5_aMC_v2_7_0 MG5_aMC_v2.7.0.tar.gz
+RUN wget https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/MG5_aMC_v2.6.7.tar.gz &&\
+         tar xf MG5_aMC_v2.6.7.tar.gz 
+RUN mv MG5_aMC_v2_6_7 /opt/mg5 && rm -rf MG5_aMC_v2_6_7 MG5_aMC_v2.6.7.tar.gz
 
 ENV ROOTSYS=/opt/root
-ENV PATH=$PATH:$ROOTSYS/bin:/opt/mg5/bin:/opt/lhapdf6/bin
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib:/opt/lhapdf6/lib
+ENV PATH=$PATH:$ROOTSYS/bin:/opt/mg5/bin:/opt/madgraph/HEPtools/lhapdf6/bin
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib:/opt/madgraph/HEPtools/lhapdf6/lib
 ENV DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$ROOTSYS/lib
-ENV PYTHONPATH=/opt/lhapdf6/lib/python2.7/site-packages/
+ENV PYTHONPATH=/opt/madgraph/HEPtools/lhapdf6/lib/python2.7/site-packages/
 
 RUN wget http://fastjet.fr/repo/fastjet-3.3.3.tar.gz && tar xf fastjet-3.3.3.tar.gz
 RUN cd fastjet-3.3.3 && ./configure --prefix=/opt/fastjet --enable-allplugins --enable-static=no \
